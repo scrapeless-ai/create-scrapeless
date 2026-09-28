@@ -2,10 +2,10 @@
 
 set -e
 
-REPO="scrapeless-ai/scrapeless-cli"
+REPO="scrapeless-ai/create-scrapeless"
 INSTALL_DIR="$HOME/.local/bin"
 
-echo "📦 Installing scrapeless-cli..."
+echo "📦 Installing create-scrapeless..."
 
 # Get latest release version
 VERSION=$(curl -s "https://api.github.com/repos/$REPO/releases/latest" | grep '"tag_name":' | head -1 | sed -E 's/.*"([^"]+)".*/\1/')
@@ -33,7 +33,7 @@ case "$ARCH" in
   *) echo "Unsupported architecture: $ARCH" && exit 1 ;;
 esac
 
-FILENAME="scrapeless-cli_${OS}_${ARCH}"
+FILENAME="create-scrapeless_${OS}_${ARCH}"
 EXT="tar.gz"
 [[ "$OS" == "windows" ]] && EXT="zip"
 
@@ -63,8 +63,8 @@ for f in "$EXTRACT_DIR"/*; do
 done
 rm -rf "$EXTRACT_DIR"
 
-BINARY_NAME="scrapeless-cli"
-[[ "$OS" == "windows" ]] && BINARY_NAME="scrapeless-cli.exe"
+BINARY_NAME="create-scrapeless"
+[[ "$OS" == "windows" ]] && BINARY_NAME="create-scrapeless.exe"
 
 echo "Installed at: $INSTALL_DIR/$BINARY_NAME"
 

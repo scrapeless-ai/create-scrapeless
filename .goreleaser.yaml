@@ -1,4 +1,5 @@
 version: 1
+project_name: create-scrapeless
 
 before:
   hooks:
@@ -6,9 +7,9 @@ before:
     - go generate ./...
 
 builds:
-  - binary: scrapeless-cli
+  - binary: create-scrapeless
     ldflags:
-      - -s -w -X github.com/scrapeless-ai/scrapeless-cli/cmd.Version={{ .Version }}
+      - -s -w -X github.com/scrapeless-ai/create-scrapeless/cmd.Version={{ .Version }}
     env:
       - CGO_ENABLED=0
     goos:

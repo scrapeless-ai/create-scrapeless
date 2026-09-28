@@ -1,5 +1,5 @@
 # Binary name as defined in goreleaser.yaml
-BINARY_NAME = scrapeless-cli
+BINARY_NAME = create-scrapeless
 
 # Default version (can be overridden with VERSION=x.y.z)
 VERSION ?= v0.0.1
@@ -21,7 +21,7 @@ build:
 .PHONY: build-local
 build-local:
 	@echo "Building local binary for current platform..."
-	go build -ldflags "-X github.com/scrapeless-ai/scrapeless-cli/cmd.Version=$(VERSION)" -o $(BINARY_NAME) main.go
+	go build -ldflags "-X github.com/scrapeless-ai/create-scrapeless/cmd.Version=$(VERSION)" -o $(BINARY_NAME) main.go
 
 .PHONY: release
 release:
