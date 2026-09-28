@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/AlecAivazis/survey/v2"
-	"github.com/scrapeless-ai/scrapeless-cli/utils"
+	"github.com/scrapeless-ai/create-scrapeless/utils"
 	"github.com/spf13/cobra"
 	"os"
 )
@@ -27,15 +27,15 @@ func Execute() {
 }
 
 var rootCmd = &cobra.Command{
-	Use:   "scrapeless-cli",
+	Use:   "create-scrapeless",
 	Short: "Command-line interface for managing Scrapeless actors",
-	Long: `scrapeless-cli is a command-line tool for creating, running Scrapeless actor projects.
+	Long: `create-scrapeless is a command-line tool for creating, running Scrapeless actor projects.
 It supports interactive project generation, template-based initialization, and quick local execution.
-To learn more, visit the GitHub repository: https://github.com/scrapeless-ai/scrapeless-cli`,
+To learn more, visit the GitHub repository: https://github.com/scrapeless-ai/create-scrapeless`,
 
 	Run: func(cmd *cobra.Command, args []string) {
 		if versionFlag {
-			fmt.Printf("scrapeless-cli version: %s\n", Version)
+			fmt.Printf("create-scrapeless version: %s\n", Version)
 			return
 		}
 		if createFlag {
@@ -56,7 +56,7 @@ To learn more, visit the GitHub repository: https://github.com/scrapeless-ai/scr
 
 func init() {
 	rootCmd.PersistentFlags().BoolVarP(&versionFlag, "version", "v", false,
-		"Print the version number of scrapeless")
+		"Print the version number of create-scrapeless")
 
 	rootCmd.PersistentFlags().StringVarP((*string)(&template), "tmpl", "t", "",
 		"Specify the template type to generate the actor code template, this is required when creating via command line\nSupported values: "+utils.GetProjectsStr())

@@ -1,6 +1,6 @@
-# 🧰 scrapeless-cli
+# 🧰 create-scrapeless
 
-> A command-line tool to quickly scaffold [Scrapeless](https://github.com/scrapeless-ai/scrapeless-cli) actor templates using Golang or Node.js.
+> A command-line tool to quickly scaffold [Scrapeless](https://github.com/scrapeless-ai/create-scrapeless) actor templates using Golang or Node.js.
 
 ---
 
@@ -18,19 +18,19 @@
 ### Using the install script (recommended)
 You can quickly install the latest release via our bash install script (Linux/macOS/Windows Git Bash):
 ```bash
-bash <(curl -fsSL https://raw.githubusercontent.com/scrapeless-ai/scrapeless-cli/main/install-scrapeless-cli.sh)
+bash <(curl -fsSL https://raw.githubusercontent.com/scrapeless-ai/create-scrapeless/main/install-create-scrapeless.sh)
 ```
 This script will:
 - Automatically detect your OS and architecture
-- Download the latest scrapeless release
+- Download the latest create-scrapeless release
 - Extract the binary and install it to ~/.local/bin
 - Add ~/.local/bin to your PATH if it’s not already set (for Linux/macOS)
 - Show instructions on how to add to PATH manually on Windows
 
-### From source (requires Go 1.18+)
+### From source (requires Go 1.24+)
 
 ```bash
-go install github.com/scrapeless-ai/scrapeless-cli@latest
+go install github.com/scrapeless-ai/create-scrapeless@latest
 ```
 
 ## 🚀 Usage
@@ -40,7 +40,7 @@ go install github.com/scrapeless-ai/scrapeless-cli@latest
 Just run:
 
 ```bash
-scrapeless-cli --create
+create-scrapeless --create
 ```
 
 You’ll be guided to:
@@ -55,20 +55,20 @@ You’ll be guided to:
 Fully automate project generation with flags:
 
 ```bash
-scrapeless-cli --tmpl start_with_golang --name my-actor
+create-scrapeless --tmpl start_with_golang --name my-actor
 ```
 
 Creates a folder **my-actor** using the Golang actor template.
 Run your actor:
 ```bash
 cd my-actor
-scrapeless-cli --run
+create-scrapeless --run
 ```
 
 ### 📌 3. Show Version
 
 ```bash
-scrapeless-cli --version
+create-scrapeless --version
 ```
 
 ## 🧩 Flags
@@ -78,13 +78,13 @@ scrapeless-cli --version
 | `--create`  | `-c`  | Launch interactive template selection and naming           |
 | `--tmpl`    | `-t`  | Choose a template (`start_with_golang`, `start_with_node`) |
 | `--name`    | `-n`  | Set the project folder name (default: `my-actor`)          |
-| `--version` | `-v`  | Print the version number of `scrapeless-cli`               |
+| `--version` | `-v`  | Print the version number of `create-scrapeless`               |
 | `--run`     | `-r`  | Quickly launch your actor                                  |
 
 ## 📸 Example
 
 ```
-scrapeless-cli --create
+create-scrapeless --create
 # ? Select a template  [Use arrows to move, type to filter, ? for more help]
 # > start_with_golang
 #   start_with_node_js
@@ -99,7 +99,7 @@ scrapeless-cli --create
 # Template generated in your_work_base\my-actor
 
 cd my-actor
-scrapeless-cli --run
+create-scrapeless --run
 # Output:
 # Launch my-actor logs...
 ```

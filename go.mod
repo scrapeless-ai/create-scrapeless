@@ -1,4 +1,4 @@
-module github.com/scrapeless-ai/scrapeless-cli
+module github.com/scrapeless-ai/create-scrapeless
 
 go 1.24.0
 
